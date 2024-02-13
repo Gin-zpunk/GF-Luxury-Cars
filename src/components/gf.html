@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gf.css">
+</head>
+<body>
+    <div>      
+        <div class="car-slider">
+          <div class="nodeBg-carslider"></div>
+          <div class="katalog">
+          <div class="hasil" v-for="(car, index) in newCars" :key="index">
+            <img :src="car.image" :alt="'hasil ' + (index + 1)">
+            <h2>{{ car.name }}</h2>
+          </div>
+        </div>
+          <div class="nodeBg-carslider2" v-for="(car, index) in searchResults" :key="index">
+            <img :src="car.imageUrl" alt="Car Image" />
+            <span>{{ car.name }}</span>
+          </div>
+      
+          <div class="iklan" v-show="showAd">
+            <div class="wrap">
+              <img src="https://s3-alpha-sig.figma.com/img/7771/b379/b58dbdaade0a89020bbd0fc2d6b6798e?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ThBbK~3xrQ6SACLZs9KaX7M8KAg-24GNjX7w9MbasjB-PqgvUrX6LI55kRVwa6q5Nr7obKCYrRq0fZm1dYQ5hepgfWMqF9UqG-uhaNmyNYB-~LbTS80l6D2FbjBHm-CzluenPqh9e9f7p9WwVElT2W9JB2DTN87VgiRMAqWjnPDqP2KH70FHHzrtVkuQQkVOF~j81OtyiHxL2S1RLLrS8Xous4Eh1GsmD9XqwTTw6~wJ-Wn98xfcnyMMbsECWTP4IaK82A2pAdDXqwZVq4IAHE905x1sLt9kPDyBG~S2V~cKn943N7JZJZiBeZHLpW0MbdZ9nEYmAz7rU9WaPK7t2w__" class="iklan11" alt="">
+              <img src="https://media.autoexpress.co.uk/image/private/s---lOTnuW1--/v1700076876/evo/2023/11/Ferrari%20SF90%20XX%20Stradale%20evo-5.jpg" class="iklan22" alt="">
+              <img src="https://wallpapercave.com/wp/wp2693817.jpg" class="iklan33" alt="">
+              <img src="https://s3-alpha-sig.figma.com/img/7771/b379/b58dbdaade0a89020bbd0fc2d6b6798e?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ThBbK~3xrQ6SACLZs9KaX7M8KAg-24GNjX7w9MbasjB-PqgvUrX6LI55kRVwa6q5Nr7obKCYrRq0fZm1dYQ5hepgfWMqF9UqG-uhaNmyNYB-~LbTS80l6D2FbjBHm-CzluenPqh9e9f7p9WwVElT2W9JB2DTN87VgiRMAqWjnPDqP2KH70FHHzrtVkuQQkVOF~j81OtyiHxL2S1RLLrS8Xous4Eh1GsmD9XqwTTw6~wJ-Wn98xfcnyMMbsECWTP4IaK82A2pAdDXqwZVq4IAHE905x1sLt9kPDyBG~S2V~cKn943N7JZJZiBeZHLpW0MbdZ9nEYmAz7rU9WaPK7t2w__" class="iklan44" alt="">
+            </div>
+          </div>
+        </div>
+      
+        <div class="navbar"></div>
+      
+        <!-- <div class="current-time">
+            <p>Current time in Jakarta: <span id="current-time"></span></p>
+          </div> -->
+      
+        <div class="logo">
+          <div class="g-logo">
+            <span class="g-logo-0">G</span>
+          </div>
+          <div class="f-logo">
+            <span class="f-logo-0">F</span>
+          </div>
+        </div>
+      
+        <div class="login">
+          <div class="loginregister">
+            <button class="button-login" onclick="goToLogin()">
+            <a class="button-login">Login / Register</a></button>
+          </div>
+        </div>
+      
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..."  />
+          <button class="search-button" v-model="searchKeyword" onclick="search()"></button>
+        </div>
+        <div class="search-overlay"></div>  
+        <div class="group-navbar">
+          <div class="nav">
+            <div class="home">
+              <span class="home-0">Home</span>
+            </div>
+          
+          <div class="products">
+            <div class="products-0">
+              <span class="products-1">Products</span>
+            </div>
+          </div>
+          <div class="discover">
+            <div class="discover-0">
+              <span class="discover-1">Discover</span>
+            </div>
+          </div>
+          <div class="cars">
+            <div class="cars-0">
+              <button class="my-cars" onclick="goToCars()">
+              <span class="cars-1">Cars</span></button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- katalog mobil -->
+      <div id="app">
+        <div class="container">
+          <h1>New Cars</h1>
+          <div class="catalog">
+            <div class="product" v-for="(car, index) in newCars" :key="index">
+              <img :src="car.image" :alt="'Product ' + (index + 1)">
+              <h2>{{ car.name }}</h2>
+            </div>
+          </div>
+          <button class="button">
+            <a>Discover More</a>
+          </button>
+        </div>
+      
+        <div class="container2">
+          <h1>Used Cars</h1>
+          <div class="catalog">
+            <div class="product" v-for="(car, index) in usedCars" :key="index">
+              <img :src="car.image" :alt="'Product ' + (index + 1)">
+              <h2>{{ car.name }}</h2>
+            </div>
+          </div>
+          <button class="button">
+            <a>Discover More</a>
+          </button>
+        </div>
+          </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+      <script src="script.js"></script>
+
+</body>
+</html>
