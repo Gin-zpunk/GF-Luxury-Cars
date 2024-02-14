@@ -1,57 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Animation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <div class="container">
-          <h1>New Cars</h1>
-          <div class="catalog">
-            <div class="product" v-for="(car, index) in newCars" :key="index">
-              <img :src="car.image" :alt="'Product ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
-          </div>
-          <button class="button">
-            <a>Discover More</a>
-          </button>
-        </div>
-      
-        <div class="container2">
-          <h1>Used Cars</h1>
-          <div class="catalog">
-            <div class="product" v-for="(car, index) in usedCars" :key="index">
-              <img :src="car.image" :alt="'Product ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-      <script>
-        new Vue({
-          el: '#app',
-          data: {
-            newCars: [
-              { name: 'Corvette C8', image: 'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F02%2FHennesseys-Corvette-C8-Stingray-Boasts-708-HP-tw.jpg?w=960&cbr=1&q=90&fit=max' },
-              { name: 'Bentley Flying Spur', image: 'https://cdn.motor1.com/images/mgl/W88QBO/s3/bentley-flying-spur-s-front-angle.jpg' },
-              { name: 'Porsche 911 GT3 RS', image: 'https://images.carexpert.com.au/resize/3000/-/app/uploads/2023/10/Porsche-911-GT3-RS_HERO-16x9-1.jpg' },
-              { name: 'Maybach GLS 600', image: 'https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_1080,q_auto:eco,w_1920/v1/cms/uploads/lRYBm78KQzWv6NoCSoby' }
-            ],
-            usedCars: [
-              { name: 'Mazda RX 7', image: 'https://www.slashgear.com/img/gallery/if-youre-buying-a-mazda-rx-7-know-these-things-about-the-rotary-engine/intro-1678393256.jpg' },
-              { name: 'Jeep Grand Cherokee', image: 'https://cdn.motor1.com/images/mgl/Rqqv99/s3/2023-jeep-grand-cherokee-4xe-30th-anniversary-edition.jpg' },
-              { name: 'Lamborghini Urus', image: 'https://imgcdnblog.carvaganza.com/wp-content/uploads/2020/09/lamborghini-urus-graphite-capsule.jpg' },
-              { name: 'Toyota Supra MK4', image: 'https://momobil.id/news/wp-content/uploads/2022/10/Toyota-Supra-Mk4-1024x576.jpg' }
-            ]
-          }
-        });
-      </script>
-      
+  <div class="container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button id="searchBtn">Search</button>
+    <div class="loader" id="loader">
+      <svg viewBox="25 25 50 50">
+        <circle r="20" cy="50" cx="50"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <script src="nyoba.js"></script>
 </body>
 </html>

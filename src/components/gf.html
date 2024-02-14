@@ -3,39 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GF Luxury Cars</title>
+    <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="gf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
-    <div>      
+    <div id="search"> 
         <div class="car-slider">
           <div class="nodeBg-carslider"></div>
           <div class="katalog">
-          <div class="hasil" v-for="(car, index) in newCars" :key="index">
-            <img :src="car.image" :alt="'hasil ' + (index + 1)">
-            <h2>{{ car.name }}</h2>
+            <div class="hasil" v-for="(car, index) in searchResults" :key="index"> <!-- Ubah dari newCars menjadi searchResults -->
+              <img :src="car.image" :alt="'hasil ' + (index + 1)">
+              <h2>{{ car.name }}</h2>
+            </div>
           </div>
-        </div>
-          <div class="nodeBg-carslider2" v-for="(car, index) in searchResults" :key="index">
-            <img :src="car.imageUrl" alt="Car Image" />
-            <span>{{ car.name }}</span>
-          </div>
-      
           <div class="iklan" v-show="showAd">
             <div class="wrap">
-              <img src="https://s3-alpha-sig.figma.com/img/7771/b379/b58dbdaade0a89020bbd0fc2d6b6798e?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ThBbK~3xrQ6SACLZs9KaX7M8KAg-24GNjX7w9MbasjB-PqgvUrX6LI55kRVwa6q5Nr7obKCYrRq0fZm1dYQ5hepgfWMqF9UqG-uhaNmyNYB-~LbTS80l6D2FbjBHm-CzluenPqh9e9f7p9WwVElT2W9JB2DTN87VgiRMAqWjnPDqP2KH70FHHzrtVkuQQkVOF~j81OtyiHxL2S1RLLrS8Xous4Eh1GsmD9XqwTTw6~wJ-Wn98xfcnyMMbsECWTP4IaK82A2pAdDXqwZVq4IAHE905x1sLt9kPDyBG~S2V~cKn943N7JZJZiBeZHLpW0MbdZ9nEYmAz7rU9WaPK7t2w__" class="iklan11" alt="">
-              <img src="https://media.autoexpress.co.uk/image/private/s---lOTnuW1--/v1700076876/evo/2023/11/Ferrari%20SF90%20XX%20Stradale%20evo-5.jpg" class="iklan22" alt="">
-              <img src="https://wallpapercave.com/wp/wp2693817.jpg" class="iklan33" alt="">
-              <img src="https://s3-alpha-sig.figma.com/img/7771/b379/b58dbdaade0a89020bbd0fc2d6b6798e?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ThBbK~3xrQ6SACLZs9KaX7M8KAg-24GNjX7w9MbasjB-PqgvUrX6LI55kRVwa6q5Nr7obKCYrRq0fZm1dYQ5hepgfWMqF9UqG-uhaNmyNYB-~LbTS80l6D2FbjBHm-CzluenPqh9e9f7p9WwVElT2W9JB2DTN87VgiRMAqWjnPDqP2KH70FHHzrtVkuQQkVOF~j81OtyiHxL2S1RLLrS8Xous4Eh1GsmD9XqwTTw6~wJ-Wn98xfcnyMMbsECWTP4IaK82A2pAdDXqwZVq4IAHE905x1sLt9kPDyBG~S2V~cKn943N7JZJZiBeZHLpW0MbdZ9nEYmAz7rU9WaPK7t2w__" class="iklan44" alt="">
+              <img src="https://media.licdn.com/dms/image/D5612AQHC8-gRTxpWOQ/article-cover_image-shrink_720_1280/0/1707460527018?e=1713398400&v=beta&t=FtEt1o03r6ybovnPvBrVdQShv2nRlPap8f-3B_nngQI" class="iklanimg" alt="">
+              <img src="https://media.autoexpress.co.uk/image/private/s---lOTnuW1--/v1700076876/evo/2023/11/Ferrari%20SF90%20XX%20Stradale%20evo-5.jpg" class="iklanimg" alt="">
+              <img src="https://wallpapercave.com/wp/wp2693817.jpg" class="iklanimg" alt="">
+              <img src="https://www.topgear.com/sites/default/files/2021/08/2010-Pagani-Zonda-R-Evolution-_0.jpg" class="iklanimg" alt="">
             </div>
           </div>
         </div>
       
         <div class="navbar"></div>
-      
-        <!-- <div class="current-time">
-            <p>Current time in Jakarta: <span id="current-time"></span></p>
-          </div> -->
       
         <div class="logo">
           <div class="g-logo">
@@ -48,14 +42,14 @@
       
         <div class="login">
           <div class="loginregister">
-            <button class="button-login" onclick="goToLogin()">
+            <button class="button-login" @click="goToLogin"> <!-- Ubah dari onclick menjadi @click -->
             <a class="button-login">Login / Register</a></button>
           </div>
         </div>
       
         <div class="search-container">
-          <input type="text" class="search-input" placeholder="Search..."  />
-          <button class="search-button" v-model="searchKeyword" onclick="search()"></button>
+          <input type="text" class="search-input" placeholder="Search..." v-model="searchKeyword" /> <!-- Tambahkan v-model untuk mengikat nilai input -->
+          <button class="search-button" @click="search"></button>
         </div>
         <div class="search-overlay"></div>  
         <div class="group-navbar">
@@ -76,16 +70,17 @@
           </div>
           <div class="cars">
             <div class="cars-0">
-              <button class="my-cars" onclick="goToCars()">
-              <span class="cars-1">Cars</span></button>
+              <button class="my-cars">
+              <a href="#car" class="my-cars">Cars</a></button>
             </div>
           </div>
           </div>
         </div>
       </div>
 
+
       <!-- katalog mobil -->
-      <div id="app">
+      <div id="car">
         <div class="container">
           <h1>New Cars</h1>
           <div class="catalog">
@@ -111,8 +106,45 @@
             <a>Discover More</a>
           </button>
         </div>
-          </div>
-      
+      </div>
+
+          <footer>
+            <div class="blok">
+              <div class="contact-info">
+                <h2 class="desc">Contact Us</h2>
+                <p class="desc">Jl. Kliningan No.6, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264, Indonesia</p>
+                <p class="desc">Opening Hours: Monday - Friday, 7am - 4pm</p>
+                <p class="desc">Email: gfluxurycars@gmail.com</p>
+                <p class="desc">Telp: (021-3345-2219)</p>
+              </div>
+              <ul class="wrapper">
+                <li class="icon facebook">
+                    <span class="tooltip">Facebook</span>
+                    <span><i class="fab fa-facebook-f"></i></span>
+                </li>
+                <li class="icon twitter">
+                    <span class="tooltip">Twitter</span>
+                    <span><i class="fab fa-twitter"></i></span>
+                </li>
+                <li class="icon instagram">
+                    <span class="tooltip">Instagram</span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </li>
+                <li class="icon github">
+                  <span class="tooltip">Github</span>
+                  <span><i class="fab fa-github"></i></span>
+              </li>
+            </ul>
+            <button class="wa-button">
+              <p>Chat us on WhatsApp!</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+              </svg>
+          </button>
+            </div>
+          </footer>
+          
+
       <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
       <script src="script.js"></script>
 
