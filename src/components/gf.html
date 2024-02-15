@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="search"> 
-        <div class="car-slider">
+        <div class="car-slider" id="home">
           <div class="nodeBg-carslider"></div>
           <div class="katalog">
             <div class="hasil" v-for="(car, index) in searchResults" :key="index"> <!-- Ubah dari newCars menjadi searchResults -->
@@ -29,7 +29,7 @@
           </div>
         </div>
       
-        <div class="navbar"></div>
+        <div class="navbar">
       
         <div class="logo">
           <div class="g-logo">
@@ -55,7 +55,7 @@
         <div class="group-navbar">
           <div class="nav">
             <div class="home">
-              <span class="home-0">Home</span>
+              <a href="#home" class="home-0">Home</a>
             </div>
           
           <div class="products">
@@ -77,7 +77,7 @@
           </div>
         </div>
       </div>
-
+    </div>
 
       <!-- katalog mobil -->
       <div id="car">
@@ -120,20 +120,27 @@
               <ul class="wrapper">
                 <li class="icon facebook">
                     <span class="tooltip">Facebook</span>
-                    <span><i class="fab fa-facebook-f"></i></span>
+                    <span><i class="fab fa-facebook-f" id="icon"></i></span>
                 </li>
                 <li class="icon twitter">
                     <span class="tooltip">Twitter</span>
-                    <span><i class="fab fa-twitter"></i></span>
+                    <a href="https://twitter.com/algianra_" target="_blank" rel="noopener noreferrer" class="icon twitter">
+                    <span><i class="fab fa-twitter" id="icon"></i></span>
+                  </a>
                 </li>
                 <li class="icon instagram">
+                  <a href="https://www.instagram.com/rpl.duaaa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="icon instagram">
                     <span class="tooltip">Instagram</span>
-                    <span><i class="fab fa-instagram"></i></span>
+                    <span><i class="fab fa-instagram" id="icon"></i></span>
+                  </a>
                 </li>
                 <li class="icon github">
+                  <a href="https://github.com/Gin-zpunk/GF-Luxury-Cars" target="_blank" rel="noopener noreferrer" class="icon github">
                   <span class="tooltip">Github</span>
-                  <span><i class="fab fa-github"></i></span>
-              </li>
+                  <span><i class="fab fa-github" id="icon"></i></span>
+                </a>
+                </li>
+              
             </ul>
             <button class="wa-button">
               <p>Chat us on WhatsApp!</p>
