@@ -42,8 +42,9 @@
   z-index: 0;
   transform: rotate(0deg);
   border-radius: 0px 0px 0px 0px;
-  background: rgba(37, 37, 37, 0.87);
+  background: rgba(37, 37, 37, 0.738);
   backdrop-filter: blur(5px);
+  position: fixed;
 }
 
 .logo {
@@ -239,6 +240,7 @@
   cursor: pointer;
   font-size: 25px;
   top: 15px;
+  text-decoration: none;
 }
 
 .home-0::before {
@@ -1009,7 +1011,7 @@
       position: absolute;
       top: 0;
       font-size: 14px;
-      background: #fff;
+      background: #fff ;
       color: #fff;
       padding: 5px 8px;
       border-radius: 5px;
@@ -1017,6 +1019,7 @@
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      
     }
     
     .wrapper .tooltip::before {
@@ -1061,7 +1064,8 @@
     .wrapper .instagram:hover .tooltip,
     .wrapper .instagram:hover .tooltip::before {
       background: #c70098;
-      color: #fff;
+      color: #ffffff;
+      
     }
     .wrapper .github:hover,
     .wrapper .github:hover .tooltip,
@@ -1124,4 +1128,8 @@
     
     html{
       scroll-behavior: smooth;
+    }
+
+    #icon{
+      color: #ffffff;
     }
