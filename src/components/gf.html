@@ -7,6 +7,7 @@
     <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="gf.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
@@ -47,10 +48,21 @@
           </div>
         </div>
       
-        <div class="search-container">
-          <input type="text" class="search-input" placeholder="Search..." v-model="searchKeyword" /> <!-- Tambahkan v-model untuk mengikat nilai input -->
-          <button class="search-button" @click="search"></button>
+        
+        <div class="inputBox_container">
+          <svg class="search_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" alt="search icon">
+            <path d="M46.599 46.599a4.498 4.498 0 0 1-6.363 0l-7.941-7.941C29.028 40.749 25.167 42 21 42 9.402 42 0 32.598 0 21S9.402 0 21 0s21 9.402 21 21c0 4.167-1.251 8.028-3.342 11.295l7.941 7.941a4.498 4.498 0 0 1 0 6.363zM21 6C12.717 6 6 12.714 6 21s6.717 15 15 15c8.286 0 15-6.714 15-15S29.286 6 21 6z">
+            </path>
+          </svg>
+          <input class="inputBox" id="inputBox" type="text" placeholder="Search For Cars" v-model="searchKeyword" @keypress.enter="search">
         </div>
+        <!-- <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." v-model="searchKeyword" /> 
+          <button class="search-button" @click="search"></button>
+        </div> -->
+        
+        
+
         <div class="search-overlay"></div>  
         <div class="group-navbar">
           <div class="nav">
@@ -63,9 +75,9 @@
               <span class="products-1">Products</span>
             </div>
           </div>
-          <div class="discover">
-            <div class="discover-0">
-              <span class="discover-1">Discover</span>
+          <div class="contact">
+            <div class="contact-0">
+              <a href="#contact" class="contact-1">Contact</a>
             </div>
           </div>
           <div class="cars">
@@ -82,9 +94,9 @@
       <!-- katalog mobil -->
       <div id="car">
         <div class="container">
-          <h1>New Cars</h1>
+          <h1 class="carscat">New Cars</h1>
           <div class="catalog">
-            <div class="product" v-for="(car, index) in newCars" :key="index">
+            <div class="product" data-aos="fade-up" v-for="(car, index) in newCars" :key="index">
               <img :src="car.image" :alt="'Product ' + (index + 1)">
               <h2>{{ car.name }}</h2>
             </div>
@@ -92,12 +104,12 @@
           <button class="button">
             <a>Discover More</a>
           </button>
-        </div>
+          </div>
       
         <div class="container2">
-          <h1>Used Cars</h1>
+          <h1 class="carscat">Used Cars</h1>
           <div class="catalog">
-            <div class="product" v-for="(car, index) in usedCars" :key="index">
+            <div class="product" data-aos="fade-up" v-for="(car, index) in usedCars" :key="index">
               <img :src="car.image" :alt="'Product ' + (index + 1)">
               <h2>{{ car.name }}</h2>
             </div>
@@ -108,7 +120,7 @@
         </div>
       </div>
 
-          <footer>
+          <footer id="contact">
             <div class="blok">
               <div class="contact-info">
                 <h2 class="desc">Contact Us</h2>
@@ -124,7 +136,7 @@
                 </li>
                 <li class="icon twitter">
                     <span class="tooltip">Twitter</span>
-                    <a href="https://twitter.com/algianra_" target="_blank" rel="noopener noreferrer" class="icon twitter">
+                    <a href="https://twitter.com/algianra_" target="_blank" rel="noopener noreferrer">
                     <span><i class="fab fa-twitter" id="icon"></i></span>
                   </a>
                 </li>
@@ -154,6 +166,10 @@
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
       <script src="script.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
 
 </body>
 </html>

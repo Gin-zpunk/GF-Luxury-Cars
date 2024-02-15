@@ -31,6 +31,12 @@ new Vue({
         this.searchResults = [];
         this.showAd = true; // Tampilkan kembali iklan
       }
+    },
+    // Tambahkan metode untuk mendeteksi tombol "Enter"
+    handleEnterKey: function (event) {
+      if (event.key === 'Enter') {
+        this.search();
+      }
 
 
     },
