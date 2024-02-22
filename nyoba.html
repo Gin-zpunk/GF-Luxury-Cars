@@ -7,14 +7,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <style>
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 600px; /* Sesuaikan dengan lebar gambar Anda */
+    }
+  
+    .image {
+      width: 100%;
+      height: auto;
+    }
+  
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      z-index: 10;
+  }
+  </style>
+  </head>
+  <body>
+  
   <div class="container">
-    <input type="text" id="searchInput" placeholder="Search...">
-    <button id="searchBtn">Search</button>
-    <div class="loader" id="loader">
-      <svg viewBox="25 25 50 50">
-        <circle r="20" cy="50" cx="50"></circle>
-      </svg>
-    </div>
+    <img class="image" src="https://github.com/spicetify/spicetify-cli/raw/master/CustomApps/lyrics-plus/conversion.png" alt="Gambar">
+    <div class="text">Tulisan di Atas Gambar</div>
   </div>
 
   <script src="nyoba.js"></script>

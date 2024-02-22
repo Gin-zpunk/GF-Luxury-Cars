@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GF Luxury Cars</title>
     <link rel="icon" href="logo.png">
-    <link rel="stylesheet" href="gf.css">
+    <link rel="stylesheet" href="newcar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -15,17 +15,14 @@
         <div class="car-slider" id="home">
           <div class="nodeBg-carslider"></div>
           <div class="katalog">
-            <div class="hasil" v-for="(car, index) in searchResults" :key="index"> 
+            <div class="hasil" v-for="(car, index) in searchResults" :key="index"> <!-- Ubah dari newCars menjadi searchResults -->
               <img :src="car.image" :alt="'hasil ' + (index + 1)">
               <h2>{{ car.name }}</h2>
             </div>
           </div>
           <div class="iklan" v-show="showAd">
             <div class="wrap">
-              <img src="/src/assets/jesko.png" class="iklanimg" alt="">
-              <img src="/src/assets/sf90.png" class="iklanimg" alt="">
-              <img src="/src/assets/huracan.png" class="iklanimg" alt="">
-              <img src="/src/assets/g63.png" class="iklanimg" alt="">
+              <img src="/src/assets/new.png" class="iklanimg" alt="">
             </div>
           </div>
         </div>
@@ -40,14 +37,12 @@
             <span class="f-logo-0">F</span>
           </div>
         </div>
-      
         <div class="login">
           <div class="loginregister">
             <button class="button-login" @click="goToLogin"> <!-- Ubah dari onclick menjadi @click -->
             <a class="button-login">Login / Register</a></button>
           </div>
         </div>
-      
         
         <div class="inputBox_container">
           <svg class="search_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" alt="search icon">
@@ -63,7 +58,7 @@
         <div class="group-navbar">
           <div class="nav">
             <div class="home">
-              <a href="#home" class="home-0">Home</a>
+              <a href="#home" class="home-0" @click="goToHome">Home</a>
             </div>
           
           <div class="products">
@@ -92,41 +87,16 @@
       </div>
     </div>
 
-    <div class="tengah" data-aos="fade-up">
-      <h1 class="header">GF LUXURY TOYS</h1>
-      <p class="history">Initiated in 2009, GF LUXURY TOYS is an automotive dealership that focuses on growing the luxury market. GF offers the best investment and ownership experience with the most efficient operations. With a strong value in teamwork and a well-maintained community, GF builds and embeds the passion for luxury automotive within our practice. Our goal is to serve people with unique & passionate thrill-seekers, which is the main thing GF can provide.</p>
-      <div class="brand">
-        
-      </div>
-  </div>
-
       <!-- katalog mobil -->
-      <div id="car" >
-        <div class="container" >
-          <h1 class="carscat" data-aos="fade-up">New Cars</h1>
+      <div id="car">
+        <div class="container">
           <div class="catalog">
-            <div class="product" data-aos="fade-up" v-for="(car, index) in newCars.slice(0, 3)" :key="index">
+            <div class="product" data-aos="fade-up" v-for="(car, index) in newCars" :key="index">
               <img :src="car.image" :alt="'Product ' + (index + 1)">
               <h2>{{ car.name }}</h2>
             </div>
           </div>
-          <button class="button">
-            <a>Discover More</a>
-          </button>
           </div>
-      
-        <div class="container2" >
-          <h1 class="carscat" data-aos="fade-up">Used Cars</h1>
-          <div class="catalog">
-            <div class="product" data-aos="fade-up" v-for="(car, index) in usedCars.slice(0, 3)" :key="index">
-              <img :src="car.image" :alt="'Product ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
-          </div>
-          <button class="button">
-            <a>Discover More</a>
-          </button>
-        </div>
       </div>
 
 
@@ -142,20 +112,24 @@
               </div>
               <ul class="wrapper">
                 <li class="icon facebook">
+                    <span class="tooltip">Facebook</span>
                     <span><i class="fab fa-facebook-f" id="icon"></i></span>
                 </li>
                 <li class="icon twitter">
+                    <span class="tooltip">Twitter</span>
                     <a href="https://twitter.com/algianra_" target="_blank" rel="noopener noreferrer">
                     <span><i class="fab fa-twitter" id="icon"></i></span>
                   </a>
                 </li>
                 <li class="icon instagram">
                   <a href="https://www.instagram.com/rpl.duaaa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="icon instagram">
+                    <span class="tooltip">Instagram</span>
                     <span><i class="fab fa-instagram" id="icon"></i></span>
                   </a>
                 </li>
                 <li class="icon github">
                   <a href="https://github.com/Gin-zpunk/GF-Luxury-Cars" target="_blank" rel="noopener noreferrer" class="icon github">
+                  <span class="tooltip">Github</span>
                   <span><i class="fab fa-github" id="icon"></i></span>
                 </a>
                 </li>
