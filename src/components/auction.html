@@ -91,7 +91,7 @@
 
   <!-- lelang -->
   <div class="lelang" id="lelang">
-    <div class="product"  data-aos="fade-up" v-for="(lelang, index) in lelang" :key="index">
+    <div class="product" data-aos="fade-up" v-for="(lelang, index) in lelang" :key="index">
       <img :src="lelang.image" :alt="'lelang ' + (index + 1)">
       <h3>{{ lelang.top }}</h3>
       <div class="horizontal-line"></div>
@@ -102,11 +102,12 @@
       <div class="horizontal-line"></div>
       <h4>Estimated</h4>
       <h5>{{ lelang.est }}</h5>
-      <button class="button">
+      <button class="button register"> <!-- Menggunakan kelas 'register' -->
         <a>Bid</a>
       </button>
     </div>
   </div>
+  
 
 
     <footer id="contact">

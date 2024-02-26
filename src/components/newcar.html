@@ -88,16 +88,18 @@
     </div>
 
       <!-- katalog mobil -->
-      <div id="car">
-        <div class="container">
+      
+        <div class="container" id="car" >
+          <h1 class="carscat" data-aos="fade-up">New Cars</h1>
           <div class="catalog">
-            <div class="product" data-aos="fade-up" v-for="(car, index) in newCars" :key="index">
-              <img :src="car.image" :alt="'Product ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
+            <a v-for="(car, index) in newCars" :key="'newCar_' + index" :href="'detail.html?id=' + car.id">
+              <div class="product" data-aos="fade-up">
+                <img :src="car.image" alt="Car Image">
+                <h2>{{ car.name }}</h2>
+              </div>
+            </a>
           </div>
-          </div>
-      </div>
+        </div>
 
 
       <!-- footer -->

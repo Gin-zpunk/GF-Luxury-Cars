@@ -11,25 +11,7 @@
 
 </head>
 <body>
-    <div id="search"> 
-        <div class="car-slider" id="home">
-          <div class="nodeBg-carslider"></div>
-          <div class="katalog">
-            <div class="hasil" v-for="(car, index) in searchResults" :key="index"> 
-              <img :src="car.image" :alt="'hasil ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
-          </div>
-          <div class="iklan" v-show="showAd">
-            <div class="wrap">
-              <img src="/src/assets/jesko.png" class="iklanimg" alt="">
-              <img src="/src/assets/sf90.png" class="iklanimg" alt="">
-              <img src="/src/assets/huracan.png" class="iklanimg" alt="">
-              <img src="/src/assets/g63.png" class="iklanimg" alt="">
-            </div>
-          </div>
-        </div>
-      
+    <div id="search">      
         <div class="navbar" id="navbar">
       
         <div class="logo">
@@ -90,41 +72,68 @@
           </div>
         </div>
       </div>
+
+      <div class="car-slider" id="home">
+        <div class="nodeBg-carslider"></div>
+        <div class="katalog">
+          <div class="hasil" v-for="(car, index) in searchResults" :key="index"> 
+            <img :src="car.image" :alt="'hasil ' + (index + 1)">
+            <h2>{{ car.name }}</h2>
+          </div>
+        </div>
+        <div class="iklan" v-show="showAd">
+          <div class="wrap">
+            <img src="/src/assets/jesko.png" class="iklanimg" alt="">
+            <img src="/src/assets/sf90.png" class="iklanimg" alt="">
+            <img src="/src/assets/huracan.png" class="iklanimg" alt="">
+            <img src="/src/assets/g63.png" class="iklanimg" alt="">
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="tengah" data-aos="fade-up">
-      <h1 class="header">GF LUXURY TOYS</h1>
-      <p class="history">Initiated in 2009, GF LUXURY TOYS is an automotive dealership that focuses on growing the luxury market. GF offers the best investment and ownership experience with the most efficient operations. With a strong value in teamwork and a well-maintained community, GF builds and embeds the passion for luxury automotive within our practice. Our goal is to serve people with unique & passionate thrill-seekers, which is the main thing GF can provide.</p>
-      <div class="brand">
-        
+    <!-- about -->
+    <div id="about" v-show="showAbout">
+    <div class="tengah" data-aos="fade-up" >
+      <h1 class="header">{{ about[0].title }}</h1>
+      <p class="history">{{ about[0].desc }}</p>
+      <div class="brandcon" data-aos="fade-up">
+      <div class="brand" v-for="(logo, index) in logo" :key="index">
+        <img :src="logo.img" :alt="'Brand ' + (index + 1)">
       </div>
+    </div>
+  </div>
   </div>
 
       <!-- katalog mobil -->
-      <div id="car" >
+      <div id="car" class="container">
         <div class="container" >
           <h1 class="carscat" data-aos="fade-up">New Cars</h1>
           <div class="catalog">
-            <div class="product" data-aos="fade-up" v-for="(car, index) in newCars.slice(0, 3)" :key="index">
-              <img :src="car.image" :alt="'Product ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
+            <a v-for="(car, index) in newCars" :key="'newCar_' + index" :href="'detail.html?id=' + car.id">
+              <div class="product" data-aos="fade-up">
+                <img :src="car.image" alt="Car Image">
+                <h2>{{ car.name }}</h2>
+              </div>
+            </a>
           </div>
           <button class="button">
-            <a>Discover More</a>
+            <a href="newcar.html">Discover More</a>
           </button>
-          </div>
+        </div>
       
         <div class="container2" >
           <h1 class="carscat" data-aos="fade-up">Used Cars</h1>
           <div class="catalog">
-            <div class="product" data-aos="fade-up" v-for="(car, index) in usedCars.slice(0, 3)" :key="index">
-              <img :src="car.image" :alt="'Product ' + (index + 1)">
-              <h2>{{ car.name }}</h2>
-            </div>
+            <a v-for="(car, index) in usedCars" :key="'usedCar_' + index" :href="'detail.html?id=' + car.id">
+              <div class="product" data-aos="fade-up">
+                <img :src="car.image" alt="Car Image">
+                <h2>{{ car.name }}</h2>
+              </div>
+            </a>
           </div>
           <button class="button">
-            <a>Discover More</a>
+            <a href="usedcar.html">Discover More</a>
           </button>
         </div>
       </div>
@@ -174,9 +183,7 @@
       <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
       <script src="script.js"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-        AOS.init();
-      </script>
+      <script>AOS.init();</script>
 
 </body>
 </html>

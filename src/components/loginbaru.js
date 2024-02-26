@@ -9,3 +9,10 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
+// Function to navigate to gf.html
+function goToHome() {
+    window.location.href = "./gf.html";
+}
+
+

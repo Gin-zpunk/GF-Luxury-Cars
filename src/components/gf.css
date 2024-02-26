@@ -1,37 +1,16 @@
-
-
-.parent-div {
-  width: 100%;
-  height: 2800px;
-  overflow: hidden;
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+body{
+  overflow-x: hidden;
+  margin-left: 105px;
 }
-.desktop--1-1-102 {
-  position: absolute;
-  width: 100%;
-  height: 2800px;
-  top: 0px;
-  left: 0px;
-  opacity: 1;
-  z-index: 1;
-  transform: rotate(0deg);
-  overflow: hidden;
-  border-radius: 0px 0px 0px 0px;
-  background: #d9d9d9ff;
-}
+
 .car-slider{
-  position: absolute;
   width: 100%;
-  height: auto;
-  top: 7px;
-  left: 0px;
   opacity: 1;
   z-index: 0;
   transform: rotate(0deg);
   border-radius: 0px 0px 0px 0px;
   background: #f0f0f0;
+  margin-top: -100px;
 }
 
 .navbar {
@@ -149,71 +128,6 @@ background-color:#313131;
   color: #ffffffff;
 }
 
-/* .search-container {
-  position: absolute;
-  width: 500px;
-  height: 44px;
-  top: 15px;
-  left: 1100px;
-  opacity: 1;
-  z-index: 4;
-  border-radius: 22px;
-  overflow: hidden;
-
-}
-
-.search-input:hover .search-input:focus .search-container:hover{
-  outline: none;
-  border-color: #000000;
-}
-
-.search-input {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  padding: 0 34.4px;
-  border-radius: 30px;
-  font-size: 24px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 25px;
-  color: #000000;
-  background: #d9d9d9;
-  border: none;
-  outline: none;
-}
-
-.search-button {
-  position: absolute;
-  top: 8px;
-  /* right: 25px; 
-  left: 450px;
-  width: 30px;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  background-size: contain;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEeSURBVHgB7VXBEcIgEFy1gZRACSnFDqSDaAd2oC1YQfL0aQemg8QKSAcKk2NCGAiEGF/uzE6AHOxxHAfgRibJJUvJRvJNfNLYAQuxlxTGwj42sWIbq3+VLIx+J1lJttTPicyac0IkzoaXIuAlxziMF0SAYxwGFjGHWULB0DUzBVxCaveZz5DP8SYwv/AZlRh2kQqdjaXr5xZDeGqko6Jv7hPJvyDS0pfBI7I6tiEvIqGj0fkM9MELpEOnsffgH9RWOZ6awozalc9ILa5TUCD9MgavAMcPyorCBfFlnFsCkyIbh9DR6Lfo709teK/em2xC/IYIcIeXLqrzKzAO9ez6x9GnpPlKNjRWWLtZJDTXqb/QYiGxwzpQKf9CXzjvH1LVhO9828CpAAAAAElFTkSuQmCC);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.search-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 3;
-  display: none;
-} */
-
-/* Untuk scrollbar horizontal dan vertikal */
-/* Untuk scrollbar horizontal dan vertikal */
 ::-webkit-scrollbar {
   width: 8px; /* Lebar scrollbar */
 }
@@ -744,19 +658,16 @@ background-color:#313131;
 
   .iklan {
     width: 100%;
-    top: 460px;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
     overflow: hidden;
     white-space: nowrap;
+    height: 1100px;
   }
   
   .wrap {
     display:flex;
     animation: slide 20s infinite;
     width: 100%;
-    height: 100%;
+    height: 1000px;
     position: relative;
     
   }
@@ -795,19 +706,6 @@ background-color:#313131;
     }
 }
 
-  
-    
-
-    .current-time {
-      position: absolute;
-      right: 1424px;
-      top: 153px;
-      transform: translateY(-50%) translateX(-100%);
-      font-size: 12px;
-      color: rgb(255, 255, 255);
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 5px 10px;
-    }
 
     .tulismbl{
       font-family:Arial, Helvetica, sans-serif;
@@ -919,11 +817,11 @@ background-color:#313131;
         display: flex;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 90px; 
-        padding-left: 40px;
+        padding-left: 10px;
     }
     
     .carscat{
-      padding-left: 40px;
+      padding-left: 10px;
     }
 
     .product {
@@ -933,7 +831,7 @@ background-color:#313131;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
-        width: 550px;
+        width: 500px;
         height: 335px;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
@@ -948,12 +846,14 @@ background-color:#313131;
     .product img {
         width: 500px;
         height: 300px;
-        border-radius: 5px;
+
     }
     
     .product h2 {
         font-size: 20px;
         margin-top: 10px;
+        text-decoration: none;
+        color: inherit;
     }
     
     .image {
@@ -976,7 +876,7 @@ background-color:#313131;
       font-size: 20px;
       margin: 30px 2px;
       transition: background-color 0.5s, color 0.5s; 
-      margin-left: 40px;
+      margin-left: 10px;
     }
     
     .button:after {
@@ -1041,8 +941,8 @@ background-color:#313131;
         transition: transform 0.3s ease;
         width: 500px;
         height: 335px;
-        margin-top: 70px;
-      
+        margin-top: 150px;
+        
     }
     
     .hasil:hover {
@@ -1055,7 +955,7 @@ background-color:#313131;
     .hasil img {
         width: 500px;
         height: 300px;
-        border-radius: 5px;
+        
     }
     
     .hasil h2 {
@@ -1292,12 +1192,11 @@ background-color:#313131;
   
   .tengah {
       width: 80%;
-      margin: 0 auto;
-      padding: 2rem;
+      padding: 50px 2rem;
       text-align: center;
-      padding-top: 1100px;
       width: 1920px;
-      
+      align-items: center;
+
   }
   
   .header {
@@ -1318,3 +1217,30 @@ background-color:#313131;
       text-align: center  ;
       padding-left: 400px;
   }
+
+ .brand {
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    display: grid;
+    flex-direction: row; /* Mengatur konten agar berjejer horizontal */
+    justify-content: space-between; /* Mengatur konten agar berjejer ke pinggir */
+    align-items: center;
+    padding: 15px;
+}
+
+      .brand img {
+        width: 250px;
+        height: 200px;
+        border-radius: 5px;
+    }
+
+.brandcon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+    gap: 10px;
+    width: 1400px;
+    padding-left: 200px;
+    padding-top: 100px;
+}
+
