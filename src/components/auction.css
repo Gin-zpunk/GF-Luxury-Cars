@@ -807,6 +807,7 @@
       height: 500px;
       transition: background-color 0.3s ease, color 0.3s ease;
       padding-bottom: 250px;
+      padding-top: 50px;
   }
 
   

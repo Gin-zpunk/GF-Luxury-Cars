@@ -1,47 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
-  text-align: center;
-  margin-top: 100px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.loader {
-  display: none;
-  margin-top: 20px;
+h1 {
+    font-size: 2.5em;
+    margin-top: 50px;
 }
 
-svg {
-  width: 3.25em;
-  transform-origin: center;
-  animation: rotate4 2s linear infinite;
+.details {
+    margin-top: 50px;
+    font-size: 1.2em;
 }
 
-circle {
-  fill: none;
-  stroke: hsl(214, 97%, 59%);
-  stroke-width: 2;
-  stroke-dasharray: 1, 200;
-  stroke-dashoffset: 0;
-  stroke-linecap: round;
-  animation: dash4 1.5s ease-in-out infinite;
+.details span {
+    font-weight: bold;
 }
 
-@keyframes rotate4 {
-  100% {
-    transform: rotate(360deg);
-  }
+.simulator-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-right: 20px;
 }
 
-@keyframes dash4 {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
+.inquiry-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+}
 
-  50% {
-    stroke-dasharray: 90, 200;
-    stroke-dashoffset: -35px;
-  }
-
-  100% {
-    stroke-dashoffset: -125px;
-  }
+.contact-info {
+    margin-top: 100px;
+    font-size: 1.2em;
 }
